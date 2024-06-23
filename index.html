@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <title>Image Gallery</title>
+    <script src="constants.js" type="module" defer></script>
+    <script src="index.js" type="module" defer></script>
+  </head>
+  <body>
+    <header class="header">
+      <h2>Image Gallery</h2>
+      <div class="searchcontainer">
+        <input
+          type="text"
+          name="search"
+          id="search"
+          class="searchbar"
+          placeholder="Search for images"
+        />
+        <i class="fa fa-search searchicon"></i>
+      </div>
+    </header>
+    <main>
+      <div id="gallerycontainer"></div>
+    </main>
+    <div class="lightbox" id="lightbox">
+      <div class="lightboximagecontainer">
+        <i class="fa fa-times-circle closeicon hidden" id="close"></i>
+        <img src="" alt="" class="lightboximage" id="lightboximage" />
+        <i class="fa fa-chevron-circle-left prev hidden" id="prev"></i>
+        <i class="fa fa-chevron-circle-right next hidden" id="next"></i>
+      </div>
+    </div>
+  </body>
+</html>
