@@ -29,12 +29,30 @@
     <main>
       <div id="gallerycontainer"></div>
     </main>
-    <div class="lightbox" id="lightbox">
+    <div class="lightbox hidden" id="lightbox">
       <div class="lightboximagecontainer">
-        <i class="fa fa-times-circle closeicon hidden" id="close"></i>
-        <img src="" alt="" class="lightboximage" id="lightboximage" />
-        <i class="fa fa-chevron-circle-left prev hidden" id="prev"></i>
-        <i class="fa fa-chevron-circle-right next hidden" id="next"></i>
+        <button class="closebutton" id="closebutton">
+          <span class="X"></span>
+          <span class="Y"></span>
+        </button>
+        <div class="imagecontainer">
+          <img src="" alt="" class="lightboximage" id="lightboximage" />
+          <div class="imageinfo" id="imageinfo">
+            <p class="imageindex" id="imageindex"></p>
+            <p class="imagetitle" id="imagetitle"></p>
+            <p class="imagecategory" id="imagecategory"></p>
+          </div>
+        </div>
+        <button class="prevbutton" id="prevbutton">
+          <span class="lefttop"></span>
+          <span class="leftbottom"></span>
+        </button>
+        <button class="nextbutton" id="nextbutton">
+          <span class="righttop"></span>
+          <span class="rightbottom"></span>
+        </button>
+
+        <div class="nextimages" id="nextimages"></div>
       </div>
     </div>
   </body>
