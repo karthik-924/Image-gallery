@@ -1,0 +1,23 @@
+body {
+  background-color: #000000;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  scrollbar-width: thin;
+  overflow-y: scroll;
+}
+
+.hidden {
+  display: none;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track-piece {
+  background: #000;
+}
+::-webkit-scrollbar-thumb {
+  background: #fff;
+}
