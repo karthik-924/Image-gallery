@@ -1,0 +1,65 @@
+.ascendingdescending {
+  margin-top: 20px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: rgb(255, 255, 255, 0.3);
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.arrow {
+  height: 20px;
+  position: absolute;
+  transition: transform 0.3s;
+}
+
+.presentdirection {
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  background-color: white;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: medium;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.direction {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.bottomdirection {
+  rotate: 180deg;
+}
+
+.ascendingdescending:hover .arrow {
+  transform: translateY(-200%);
+}
+
+.ascendingdescending:hover .direction {
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.ascendingdescending:hover .presentdirection {
+  width: fit-content;
+  border-radius: 20px;
+  background-color: #b8a4fc;
+  padding: 0 20px;
+}
+
+.ascendingdescending:hover {
+  width: max-content;
+  border-radius: 20px;
+  padding: 0 2.5px;
+}

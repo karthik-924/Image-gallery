@@ -1,14 +1,15 @@
 import images from "./constants.js";
-const ascending = document.getElementById("ascending");
-const descending = document.getElementById("descending");
 
 const sortfilter = document.getElementById("sortfilter");
 const gallery = document.getElementById("gallerycontainer");
+const ascendingdescending = document.getElementById("ascendingdescending");
+const direction = document.getElementById("direction");
+const arrow = document.getElementById("arrow");
 
 const sortImages = (option) => {
   gallery.innerHTML = "";
-    let sortedImages = [...images];
-    console.log(option);
+  console.log(gallery)
+  let sortedImages = [...images];
   if (option === "newest") {
     sortedImages.sort((a, b) => b.dateadded - a.dateadded);
   } else if (option === "oldest") {
@@ -41,15 +42,14 @@ const sortImages = (option) => {
     container.appendChild(img);
     container.appendChild(titlecontainer);
     container.appendChild(categorycontainer);
-
     gallery.appendChild(container);
   });
 };
 
 const sortImagesAscending = () => {
   gallery.innerHTML = "";
-    let sortedImages = [...images];
-    console.log(sortfilter.value);
+  let sortedImages = [...images];
+  // console.log(sortfilter.value);
   if (sortfilter.value === "title") {
     sortedImages.sort((a, b) => a.name.localeCompare(b.name));
   } else if (sortfilter.value === "category") {
@@ -120,24 +120,19 @@ const sortImagesDescending = () => {
 };
 
 sortfilter.addEventListener("change", () => {
-  if (
-    sortfilter.value !== "default" &&
-    sortfilter.value !== "newest" &&
-    sortfilter.value !== "oldest"
-  ) {
-    ascending.classList.remove("disabled");
-    descending.classList.remove("disabled");
-  } else {
-    ascending.classList.add("disabled");
-    descending.classList.add("disabled");
-  }
   sortImages(sortfilter.value);
+  arrow.classList.remove("bottomdirection");
+  direction.innerHTML = "Ascending";
 });
 
-ascending.addEventListener("click", () => {
-  sortImagesAscending();
-});
-
-descending.addEventListener("click", () => {
-  sortImagesDescending();
+ascendingdescending.addEventListener("click", () => {
+  if (direction.innerHTML === "Ascending" && sortfilter.value !== "newest" && sortfilter.value !== "oldest") {
+    arrow.classList.add("bottomdirection");
+    direction.innerHTML = "Descending";
+    sortImagesDescending();
+  } else if (direction.innerHTML === "Descending" && sortfilter.value !== "newest" && sortfilter.value !== "oldest") {
+    arrow.classList.remove("bottomdirection");
+    direction.innerHTML = "Ascending";
+    sortImagesAscending();
+  }
 });
