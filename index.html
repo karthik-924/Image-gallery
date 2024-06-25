@@ -13,9 +13,12 @@
     <link rel="stylesheet" href="css/header.css" />
     <link rel="stylesheet" href="css/lightboximages.css" />
     <link rel="stylesheet" href="css/filters.css" />
+    <link rel="stylesheet" href="css/sort.css" />
     <title>Image Gallery</title>
-    <script src="constants.js" type="module" defer></script>
-    <script src="index.js" type="module" defer></script>
+    <script src="js/constants.js" type="module" defer></script>
+    <script src="js/index.js" type="module" defer></script>
+    <script src="js/filters.js" type="module" defer></script>
+    <script src="js/sort.js" type="module" defer></script>
   </head>
   <body>
     <header class="header">
@@ -31,8 +34,30 @@
         <i class="fa fa-search searchicon"></i>
       </div>
       <div class="filterssortcontainer">
-        <select name="categoryfilter" id="categoryfilter" class="categoryfilter">
-        </select>
+        <div class="filterscontainer">
+          <label for="categoryfilter" class="categoryfilterlabel"
+            >Filter by</label
+          >
+          <select
+            name="categoryfilter"
+            id="categoryfilter"
+            class="categoryfilter"
+          ></select>
+        </div>
+        <div class="ascendingdescending">
+          <button class="ascending disabled" id="ascending">Ascending</button>
+          <button class="descending disabled" id="descending">Descending</button>
+        </div>
+        <div class="sortcontainer">
+          <label for="sort" class="sortlabel">Sort by</label>
+          <select name="sortfilter" id="sortfilter" class="sortfilter">
+            <option value="default">Default</option>
+            <option value="newest">Newest</option>
+            <option value="oldest">Oldest</option>
+            <option value="title">Title</option>
+            <option value="category">Category</option>
+          </select>
+        </div>
       </div>
     </header>
     <main>

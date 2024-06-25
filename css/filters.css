@@ -1,21 +1,30 @@
-.filterssortcontainer{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
+.filterssortcontainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 10px;
 }
 
-.categoryfilter{
-    width: 300px;
-    height: 30px;
-    margin-left: 30px;
-    border-radius: 20px;
-    background-color: black;
-    color: white;
-    padding-left: 10px;
-    padding-right: 10px;
+.categoryfilter {
+  width: 300px;
+  height: 30px;
+  border-radius: 10px;
+  background-color: black;
+  color: white;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
-.categoryfilter:focus{
-    outline: solid 3px #1b9bee;
+.categoryfilter:focus {
+  outline: solid 3px #1b9bee;
+}
+
+.filterscontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 30px;
+  gap: 10px;
 }
