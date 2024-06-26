@@ -5,11 +5,15 @@ const gallery = document.getElementById("gallerycontainer");
 const ascendingdescending = document.getElementById("ascendingdescending");
 const direction = document.getElementById("direction");
 const arrow = document.getElementById("arrow");
+const categoryfilter = document.getElementById("categoryfilter");
 
 const sortImages = (option) => {
   gallery.innerHTML = "";
   console.log(gallery)
   let sortedImages = [...images];
+  if (categoryfilter.value !== "All") {
+    sortedImages = sortedImages.filter((image) => image.category === categoryfilter.value);
+  }
   if (option === "newest") {
     sortedImages.sort((a, b) => b.dateadded - a.dateadded);
   } else if (option === "oldest") {
@@ -50,6 +54,9 @@ const sortImagesAscending = () => {
   gallery.innerHTML = "";
   let sortedImages = [...images];
   // console.log(sortfilter.value);
+  if (categoryfilter.value !== "All") {
+    sortedImages = sortedImages.filter((image) => image.category === categoryfilter.value);
+  }
   if (sortfilter.value === "title") {
     sortedImages.sort((a, b) => a.name.localeCompare(b.name));
   } else if (sortfilter.value === "category") {
@@ -86,6 +93,9 @@ const sortImagesAscending = () => {
 const sortImagesDescending = () => {
   gallery.innerHTML = "";
   let sortedImages = [...images];
+  if (categoryfilter.value !== "All") {
+    sortedImages = sortedImages.filter((image) => image.category === categoryfilter.value);
+  }
   if (sortfilter.value === "title") {
     sortedImages.sort((a, b) => b.name.localeCompare(a.name));
   } else if (sortfilter.value === "category") {

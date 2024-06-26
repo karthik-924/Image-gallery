@@ -1,6 +1,7 @@
 import images from "./constants.js";
 const gallery = document.getElementById("gallerycontainer");
 const categoryfilter = document.getElementById("categoryfilter");
+const sortfilter = document.getElementById("sortfilter");
 
 const filterImages = (category) => {
   gallery.innerHTML = "";
@@ -57,6 +58,9 @@ const filterImages = (category) => {
       gallery.appendChild(container);
     }
   });
+  if(sortfilter.value !== "default") {
+    sortImages();
+  }
 };
 
 categoryfilter.addEventListener("change", (e) => {

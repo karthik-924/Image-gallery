@@ -63,3 +63,9 @@
   border-radius: 20px;
   padding: 0 2.5px;
 }
+
+@media screen and (max-width: 800px){
+  .ascendingdescending{
+    margin-top: 0;
+  }
+}
