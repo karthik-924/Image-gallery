@@ -14,7 +14,7 @@ const categoryfilter = document.getElementById("categoryfilter");
 let categories = new Set();
 categories.add("All");
 
-images.forEach((image) => {
+images.forEach(async (image) => {
   const img = document.createElement("img");
   const container = document.createElement("div");
   const titlecontainer = document.createElement("div");
@@ -33,7 +33,25 @@ images.forEach((image) => {
   img.classList.add("gallery-img");
   img.dataset.index = image.id;
   categories.add(image.category);
-  //   console.log(img);
+  const tempImg = new Image();
+  tempImg.src = image.src;
+  let originalWidth = 0;
+  let originalHeight = 0;
+  tempImg.onload = () => {
+    console.log(tempImg.naturalWidth, tempImg.naturalHeight);
+    originalWidth = tempImg.naturalWidth;
+    originalHeight = tempImg.naturalHeight;
+    if (originalWidth > originalHeight) {
+      if (originalWidth - originalHeight > 500) {
+        container.classList.add("span-two-columns");
+      }
+    } else {
+      if (originalHeight - originalWidth > 500) {
+        container.classList.add("span-two-rows");
+      }
+    }
+  };
+  console.log(container);
   titlecontainer.appendChild(title);
   categorycontainer.appendChild(category);
   container.appendChild(titlecontainer);
@@ -175,7 +193,6 @@ const setCurrentImage = (index) => {
   currentImageIndex = index;
   openLightbox(currentImageIndex);
 };
-
 
 close.addEventListener("click", closelightbox);
 next.addEventListener("click", nextImage);

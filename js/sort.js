@@ -146,3 +146,5 @@ ascendingdescending.addEventListener("click", () => {
     sortImagesAscending();
   }
 });
+
+export default sortImages;

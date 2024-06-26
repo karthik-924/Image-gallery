@@ -5,7 +5,20 @@ const sortfilter = document.getElementById("sortfilter");
 
 const filterImages = (category) => {
   gallery.innerHTML = "";
-  images.forEach((image) => {
+  let sortedImages = [...images];
+  if (sortfilter.value !== "default") {
+    const option = sortfilter.value;
+    if (option === "newest") {
+      sortedImages.sort((a, b) => b.dateadded - a.dateadded);
+    } else if (option === "oldest") {
+      sortedImages.sort((a, b) => a.dateadded - b.dateadded);
+    } else if (option === "title") {
+      sortedImages.sort((a, b) => a.name.localeCompare(b.name));
+    } else if (option === "category") {
+      sortedImages.sort((a, b) => a.category.localeCompare(b.category));
+    }
+  }
+  sortedImages.forEach((image) => {
     if (category === "All") {
       const img = document.createElement("img");
       const container = document.createElement("div");
@@ -58,9 +71,6 @@ const filterImages = (category) => {
       gallery.appendChild(container);
     }
   });
-  if(sortfilter.value !== "default") {
-    sortImages();
-  }
 };
 
 categoryfilter.addEventListener("change", (e) => {
