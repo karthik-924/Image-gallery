@@ -106,4 +106,7 @@
   .searchbar {
     width: 200px;
   }
+  .line{
+    stroke: white;
+  }
 }
