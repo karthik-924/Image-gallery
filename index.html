@@ -27,26 +27,57 @@
       href="https://fonts.googleapis.com/css2?family=Cookie&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <title>Image Gallery</title>
     <script src="js/constants.js" type="module" defer></script>
     <script src="js/index.js" type="module" defer></script>
     <script src="js/filters.js" type="module" defer></script>
     <script src="js/sort.js" type="module" defer></script>
     <script src="js/search.js" type="module" defer></script>
-    <script src="js/spanrc.js" type="module" defer></script>
   </head>
   <body>
-    <header class="header">
-      <h2>Image Gallery</h2>
-      <div class="searchcontainer">
-        <input
-          type="text"
-          name="search"
-          id="search"
-          class="searchbar"
-          placeholder="Search for images"
-        />
-        <i class="fa fa-search searchicon"></i>
+    <header class="header" id="header">
+      <div class="menubar">
+        <h2 class="title">Image Gallery</h2>
+        <label class="hamburger">
+          <input type="checkbox" />
+          <svg viewBox="0 0 32 32">
+            <path
+              class="line line-top-bottom"
+              d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"
+            ></path>
+            <path class="line" d="M7 16 27 16"></path>
+          </svg>
+        </label>
+      </div>
+      <div class="captioncontainer">
+        <p class="caption">Discover the Beauty Through Our Lens</p>
+        <p class="subcaption">
+          Explore breathtaking landscapes, vibrant cityscapes, captivating
+          wildlife, and cutting-edge gadgets in our diverse gallery. Immerse
+          yourself in nature's beauty, urban charm, and technological marvels.
+          Discover inspiration and the art of photography in our curated
+          collection.
+        </p>
+      </div>
+    </header>
+    <main style="width: 100%; height: 100%" id="maincontainer">
+      <div class="searchbarcontainer">
+        <div class="searchcontainer">
+          <input
+            type="text"
+            name="search"
+            id="search"
+            class="searchbar"
+            placeholder="Search for images"
+          />
+          <i class="fa fa-search searchicon"></i>
+        </div>
       </div>
       <div class="filterssortcontainer">
         <div class="filterscontainer">
@@ -76,41 +107,41 @@
           </select>
         </div>
       </div>
-    </header>
-    <main>
-      <div id="gallerycontainer"></div>
-    </main>
-    <div class="lightbox hidden" id="lightbox">
-      <div class="lightboximagecontainer">
-        <button class="closebutton" id="closebutton">
-          <span class="X"></span>
-          <span class="Y"></span>
-        </button>
-        <div class="imagecontainer">
-          <img
-            src=""
-            alt=""
-            class="lightboximage"
-            id="lightboximage"
-            draggable="false"
-          />
-          <div class="imageinfo" id="imageinfo">
-            <p class="imageindex" id="imageindex"></p>
-            <p class="imagetitle" id="imagetitle"></p>
-            <p class="imagecategory" id="imagecategory"></p>
+      <main>
+        <div id="gallerycontainer"></div>
+      </main>
+      <div class="lightbox hidden" id="lightbox">
+        <div class="lightboximagecontainer">
+          <button class="closebutton" id="closebutton">
+            <span class="X"></span>
+            <span class="Y"></span>
+          </button>
+          <div class="imagecontainer">
+            <img
+              src=""
+              alt=""
+              class="lightboximage"
+              id="lightboximage"
+              draggable="false"
+            />
+            <div class="imageinfo" id="imageinfo">
+              <p class="imageindex" id="imageindex"></p>
+              <p class="imagetitle" id="imagetitle"></p>
+              <p class="imagecategory" id="imagecategory"></p>
+            </div>
           </div>
-        </div>
-        <button class="prevbutton" id="prevbutton">
-          <span class="lefttop"></span>
-          <span class="leftbottom"></span>
-        </button>
-        <button class="nextbutton" id="nextbutton">
-          <span class="righttop"></span>
-          <span class="rightbottom"></span>
-        </button>
+          <button class="prevbutton" id="prevbutton">
+            <span class="lefttop"></span>
+            <span class="leftbottom"></span>
+          </button>
+          <button class="nextbutton" id="nextbutton">
+            <span class="righttop"></span>
+            <span class="rightbottom"></span>
+          </button>
 
-        <div class="nextimages" id="nextimages"></div>
+          <div class="nextimages" id="nextimages"></div>
+        </div>
       </div>
-    </div>
+    </main>
   </body>
 </html>

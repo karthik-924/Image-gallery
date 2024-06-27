@@ -8,6 +8,8 @@
   box-shadow: 0 0 5px 0 rgba(255, 255, 255, 0.5);
   padding-left: 10px;
   padding-right: 10px;
+  font-family: "Tangerine", cursive;
+  font-size: 20px;
 }
 
 .sortfilter:focus {
@@ -41,15 +43,15 @@
     height: 40px;
   } */
 
-  @media screen and (max-width: 800px) {
-    .sortcontainer{
-      margin-right: 0;
-    } 
+@media screen and (max-width: 800px) {
+  .sortcontainer {
+    margin-right: 0;
   }
+}
 
-  @media screen and (max-width: 600px){
-    .sortfilter{
-      width: 200px;
-      height: 30px;
-    }
+@media screen and (max-width: 600px) {
+  .sortfilter {
+    width: 200px;
+    height: 30px;
   }
+}

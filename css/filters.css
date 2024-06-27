@@ -4,6 +4,8 @@
   align-items: center;
   width: 100%;
   margin-top: 10px;
+  font-size: 25px;
+  font-weight: bolder;
 }
 
 .categoryfilter {
@@ -11,6 +13,8 @@
   height: 40px;
   border-radius: 10px;
   background-color: black;
+  font-family: "Tangerine", cursive;
+  font-size: 20px;
   color: white;
   border: 2px solid white;
   box-shadow: 0 0 5px 0 rgba(255, 255, 255, 0.5);
