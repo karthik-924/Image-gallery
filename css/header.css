@@ -21,6 +21,7 @@
 .hamburger {
   cursor: pointer;
   margin-right: 30px;
+  display: none;
 }
 
 .hamburger input {
@@ -63,7 +64,7 @@
   margin-top: 30px;
 }
 
-.searchbarcontainer{
+.searchbarcontainer {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -102,11 +103,107 @@
   left: 15px;
 }
 
+.navbar {
+  display: flex;
+  gap: 30px;
+  margin-right: 50px;
+}
+
+.blacktextgradient {
+  /* background: linear-gradient(to right, #434343, #000000); */
+  /* -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+  font-family: "Cookie", cursive;
+  /* text-shadow: none; */
+  color: #fff;
+  font-size: 40px;
+  font-weight: 900;
+  text-decoration: none;
+  position: relative;
+  cursor: pointer;
+}
+
+.blacktextgradient::before {
+  content: "";
+  width: 0;
+  height: 2px;
+  border-radius: 2px;
+  background-color: #fff;
+  position: absolute;
+  bottom: -0.25rem;
+  left: 0;
+  transition: width 0.4s;
+}
+
+.blacktextgradient:hover::before {
+  width: 100%;
+}
+
+.menucontainer {
+  position: relative;
+  display: none;
+}
+
+.menu{
+  flex-direction: column;
+  gap: 5px;
+  padding: 10px;
+  font-size: 25px;
+  top: 100%;
+  position: absolute;
+  width: 100px;
+  right: 0;
+  border-radius: 10px;
+}
+
+.menu .link{
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+  cursor: pointer;
+}
+
+.link::before {
+  content: "";
+  width: 0;
+  height: 2px;
+  border-radius: 2px;
+  background-color: #fff;
+  position: absolute;
+  bottom: -0.25rem;
+  left: 0;
+  transition: width 0.4s;
+}
+
+.link:hover::before {
+  width: 100%;
+}
+
+
 @media screen and (max-width: 1080px) {
   .searchbar {
     width: 200px;
   }
-  .line{
+  .line {
     stroke: white;
   }
+}
+
+@media screen and (max-width: 600px) {
+  .navbar {
+    display: none;
+  }
+  .hamburger {
+    display: flex;
+  }
+  .menucontainer {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .title {
+    font-size: 30px;
+  }
+  
 }

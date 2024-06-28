@@ -11,6 +11,8 @@ const imagetitle = document.getElementById("imagetitle");
 const imagecategory = document.getElementById("imagecategory");
 const nextimages = document.getElementById("nextimages");
 const categoryfilter = document.getElementById("categoryfilter");
+const menubar = document.getElementById("menubar");
+const menu = document.getElementById("menu");
 // const header = document.getElementById("header");
 
 let categories = new Set();
@@ -166,6 +168,11 @@ window.addEventListener("resize", () => {
     vartoSubtract = 4;
   }
   sliderImages();
+});
+menubar.addEventListener("change", (e) => {
+  const checked = e.target.checked;
+  if (checked) menu.classList.remove("hidden");
+  if (!checked) menu.classList.add("hidden");
 });
 // console.log()
 // header.addEventListener("wheel", () => {

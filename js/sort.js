@@ -85,14 +85,11 @@ ascendingdescending.addEventListener("click", () => {
 
 const sortResults = (newimages) => {
   let sortedImages = [...newimages];
-  if (categoryfilter.value !== "All") {
-    sortedImages = sortedImages.filter(
-      (image) => image.category === categoryfilter.value
-    );
-  }
   const option = sortfilter.value;
   if (option === "newest") {
+    // console.log(newimages);
     sortedImages.sort((a, b) => b.dateadded - a.dateadded);
+    // console.log(sortedImages);
   } else if (option === "oldest") {
     sortedImages.sort((a, b) => a.dateadded - b.dateadded);
   } else if (option === "title") {
@@ -103,6 +100,7 @@ const sortResults = (newimages) => {
   if (direction.innerHTML === "Descending") {
     sortedImages.reverse();
   }
+  console.log(option,sortedImages);
   return sortedImages;
 };
 
